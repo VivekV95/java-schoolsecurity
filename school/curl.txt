@@ -1,0 +1,14 @@
+// Login and get access token
+curl -X POST --user "lambda-client:lambda-secret" -d "grant_type=password&username=admin&password=password" http://vivekvishwanath-courses.herokuapp.com/oauth/token
+
+// Get all students
+curl -X GET -H "Authorization: Bearer e5801ebc-cd08-4d62-99d5-73ddefbbf3c6" https://vivekvishwanath-courses.herokuapp.com/students/students
+
+// Get specific student by id = 3
+curl -X GET -H "Authorization: Bearer e5801ebc-cd08-4d62-99d5-73ddefbbf3c6" https://vivekvishwanath-courses.herokuapp.com/students/student/3
+
+// Get students with names containing user input
+curl -X GET -H "Authorization: Bearer e5801ebc-cd08-4d62-99d5-73ddefbbf3c6" https://vivekvishwanath-courses.herokuapp.com/students/student/namelike/a
+
+// Create new student
+curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer e5801ebc-cd08-4d62-99d5-73ddefbbf3c6" -d "{\"studname\": \"vivekv\"}" https://vivekvishwanath-courses.herokuapp.com/students/student
