@@ -46,4 +46,19 @@ public class RoleServiceImpl implements RoleService
     {
         return rolerepos.save(role);
     }
+
+    @Override
+    public Role findByName(String name)
+    {
+        Role rr = rolerepos.findByNameIgnoreCase(name);
+
+        if (rr != null)
+        {
+            return rr;
+        }
+        else
+        {
+            throw new EntityNotFoundException(name);
+        }
+    }
 }
