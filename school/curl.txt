@@ -22,3 +22,11 @@ curl -X DELETE -H "Authorization: Bearer e5801ebc-cd08-4d62-99d5-73ddefbbf3c6" h
 // Assign student to a course based on student id and course id
 curl -X PUT -H "Authorization: Bearer e5801ebc-cd08-4d62-99d5-73ddefbbf3c6" https://vivekvishwanath-courses.herokuapp.com/students/student/assignCourse/2/6
 
+// Get all courses
+curl -X GET -H "Authorization: Bearer e5801ebc-cd08-4d62-99d5-73ddefbbf3c6" https://vivekvishwanath-courses.herokuapp.com/courses/courses
+
+// Get courses with number of students in each course
+curl -X GET -H "Authorization: Bearer e5801ebc-cd08-4d62-99d5-73ddefbbf3c6" https://vivekvishwanath-courses.herokuapp.com/courses/studcount
+
+// Delete a course by id
+curl -X DELETE -H "Authorization: Bearer e5801ebc-cd08-4d62-99d5-73ddefbbf3c6" https://vivekvishwanath-courses.herokuapp.com/courses/courses/6
