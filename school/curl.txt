@@ -12,3 +12,13 @@ curl -X GET -H "Authorization: Bearer e5801ebc-cd08-4d62-99d5-73ddefbbf3c6" http
 
 // Create new student
 curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer e5801ebc-cd08-4d62-99d5-73ddefbbf3c6" -d "{\"studname\": \"vivekv\"}" https://vivekvishwanath-courses.herokuapp.com/students/student
+
+// Update student info based on id = 3
+curl -X PUT -H "Content-Type: application/json" -H "Authorization: Bearer e5801ebc-cd08-4d62-99d5-73ddefbbf3c6" -d "{\"studname\": \"muahaha\"}" https://vivekvishwanath-courses.herokuapp.com/students/student/3
+
+// Delete a student based on id = 3
+curl -X DELETE -H "Authorization: Bearer e5801ebc-cd08-4d62-99d5-73ddefbbf3c6" https://vivekvishwanath-courses.herokuapp.com/students/student/3
+
+// Assign student to a course based on student id and course id
+curl -X PUT -H "Authorization: Bearer e5801ebc-cd08-4d62-99d5-73ddefbbf3c6" https://vivekvishwanath-courses.herokuapp.com/students/student/assignCourse/2/6
+
