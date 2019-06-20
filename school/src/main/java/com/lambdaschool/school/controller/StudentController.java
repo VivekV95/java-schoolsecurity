@@ -50,7 +50,7 @@ public class StudentController {
             @ApiResponse(code = 200, message = "Student Found", response = Student.class),
             @ApiResponse(code = 404, message = "Student Not Found", response = ErrorDetail.class)
     })
-    @GetMapping(value = "/Student/{studentid}",
+    @GetMapping(value = "/student/{studentid}",
             produces = {"application/json"})
     public ResponseEntity<?> getStudentById(
             @ApiParam(value = "Student Id", required = true, example = "1")
@@ -125,12 +125,12 @@ public class StudentController {
             @ApiResponse(code = 500, message = "Error deleting the Student", response = ErrorDetail.class),
             @ApiResponse(code = 404, message = "Student Not Found", response = ErrorDetail.class)
     })
-    @DeleteMapping("/Student/{Studentid}")
+    @DeleteMapping("/student/{studentid}")
     public ResponseEntity<?> deleteStudentById(
             @ApiParam(value = "Student Id", required = true, example = "1")
             @PathVariable
-                    long Studentid) {
-        studentService.delete(Studentid);
+                    long studentid) {
+        studentService.delete(studentid);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
